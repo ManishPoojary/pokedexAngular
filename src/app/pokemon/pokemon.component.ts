@@ -17,7 +17,7 @@ export class PokemonComponent extends pokemonClass implements OnInit {
 
     loadMore(data){
       
-    this.addPokemons(data);
+    this.addPokemons(data['next']);
     // console.log(this.pokemons['results'].push({"name":"Manish","url":"https://pokeapi.co/api/v2/pokemon/23/"}))
     }
     viewAll(){
