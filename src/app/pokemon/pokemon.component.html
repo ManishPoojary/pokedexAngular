@@ -1,0 +1,17 @@
+<pokemon-top-bar></pokemon-top-bar>
+
+<div class="pokemon-view">
+  <div class="container-input">
+    <input type="text" placeholder="Search pokemon" [(ngModel)]="query">
+    <button style='margin-left: 3px' class="myButton" (click)="viewAll()">View All</button>
+  </div>
+  <div class="grid" *ngIf="pokemons">
+    <div class="column" *ngFor="let pokemon of pokemons.results | search: query" [routerLink]="['/detail', pokemon.name]">
+      <p>{{ pokemon.name }}</p>
+    </div>
+  </div>
+  <div class='loadMore'>
+    <button class="myButton" (click)="loadMore(pokemons.next)">Load More</button>
+    
+  </div>
+</div>
